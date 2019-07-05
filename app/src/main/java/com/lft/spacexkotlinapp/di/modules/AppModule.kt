@@ -3,6 +3,7 @@ package com.lft.spacexkotlinapp.di.modules
 import android.app.Application
 import android.arch.persistence.room.Room
 import com.lft.spacexkotlinapp.Utils.Constants
+import com.lft.spacexkotlinapp.Utils.Utils
 import com.lft.spacexkotlinapp.data.source.local.Database
 import com.lft.spacexkotlinapp.data.source.local.SpaceXDao
 import dagger.Module
@@ -29,6 +30,8 @@ class AppModule (val app: Application){
     @Singleton
     fun providesSpaceXDao(database: Database): SpaceXDao = database.spaceXDao()
 
-
+    @Provides
+    @Singleton
+    fun provideUtils(): Utils = Utils(app)
 
 }

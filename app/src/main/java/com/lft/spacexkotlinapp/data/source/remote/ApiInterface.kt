@@ -5,6 +5,7 @@ import io.reactivex.Observable
 import retrofit2.http.GET
 
 interface ApiInterface {
+
     @GET("launches")
     fun getLaunches(): Observable<List<Launch>>
 }
